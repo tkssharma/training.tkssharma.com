@@ -1,0 +1,95 @@
+<div ng-controller="PlayListController as Ctrl" ng-init="Ctrl.filterYouTubeData()">
+	<section class="hero">
+		<div class="container">
+
+			<h1 class="title">{{Ctrl.filteredData[0].Title}}</h1>
+			<div class="subtitle">
+				<p>{{Ctrl.filteredData[0].ShortDescription}}</p>
+				<p>
+					Just starting out? <strong></strong>
+				</p>
+			</div>
+			<br> <a id="hero-signup" href="/pricing" class="custom-btn custom-btn-red custom-btn-primary get-pro">Free
+				Access for learning <br> <small><i>click for YouTube
+						Videos</i></small>
+			</a>
+
+		</div>
+		<!-- container -->
+	</section>
+
+
+	<section class=" ng-scope">
+		<div class="container">
+			<h1 class="title ng-binding">{{YouTubeData.description}} </h1>
+
+			<div class="lesson-without-playlist-holder">
+				<div class="lessons-frame-holder">
+					<div class=" lessons-frame ">
+						<section class="section text-center">
+							<div class="container videoWrapper">
+								<iframe height="600px" width="1100px" ng-src="{{Ctrl.filteredData[0].url | trusted}}" frameborder="0" allowfullscreen="" src="{{Ctrl.filteredData[0].url | trusted}}"></iframe>
+							</div>
+						</section>
+					</div>
+				</div>
+				<!-- lessons-frame-holder -->
+			</div>
+		</div>
+		<!-- container -->
+	</section>
+
+
+	<section class="section section-lesson ng-scope">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 col-md-8 part-left">
+					<div class="lesson-description-holder">
+						<h3 class="ng-binding">{{discussionwithVideos.shortDescription}}</h3>
+						<div class="info-line">
+							<small class="duration"><i class="icon-time"></i> 2:05</small> <small class="folder"><i class="icon-folder-open-alt"></i> <a
+								class="underlined ng-binding" href="">angular</a></small> <small>
+								lesson by <a class="underlined" href="/instructors/aaron-frost"
+								rel="author">Tarun Sharma</a>
+							</small>
+
+						</div>
+						<div>
+							<p class="ng-binding">{{Ctrl.filteredData[0].ShortDescription}}</p>
+
+						</div>
+						<div class="share-lesson-holder"></div>
+						<!-- share-lesson-holder -->
+					</div>
+					<!-- lesson-description-holder -->
+
+				</div>
+				<!-- part-left -->
+
+				<div class="col-sm-12 col-md-4 part-right">
+
+					<!-- Featured Series -->
+					<div class="explore-series-holder">
+						<p>
+							<i>Featured series:</i>
+						</p>
+
+						<h4>
+							<a href="" class="ng-binding">{{Ctrl.filteredData[0].Title}}</a>
+						</h4>
+						<a href=""><img class="img-responsive"
+								ng-src="{{Ctrl.filteredData[0].Thumbnails[0].FullURL}}" alt=""></a>
+
+					</div>
+					<!-- explore-series-holder -->
+					<br>
+
+
+
+
+				</div>
+			</div>
+			<!-- part-right -->
+		</div>
+	</section>
+</div>

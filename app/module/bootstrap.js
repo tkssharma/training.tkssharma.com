@@ -1,0 +1,66 @@
+/* bootstrap  Angular app for fetching common resources
+ * removed ng-app from index page to use manual bootstrap
+ * @ bootstrap module added
+ */
+
+/* bootstrap  Angular app for fetching common resources
+ * removed ng-app from index page to use manual bootstrap
+ * @ bootstrap module added
+ */
+(function () {
+	'use strict';
+	var myApplication = angular.module('youtubeportal', [ 'ui.router','ngCookies','ngStorage',
+    'firebase']);
+				var initInjector = angular.injector([ "ng" ]);
+				var $http = initInjector.get("$http");
+
+	angular
+	.element(document)
+	.ready(
+			function() {
+				$http.get('../assets/json/getAllTraining.json')
+				.then(
+						function(response) {
+							myApplication.constant("resourceData",
+									response.data);
+							angular.bootstrap(document,
+									[ "youtubeportal" ]);
+						}, function(errorResponse) {
+							// Handle error case
+						});
+
+			});
+
+	//to handle Facebook URL
+	if (window.location.hash === '#_=_')
+		window.location.hash = '#!';
+
+	//For Google seo route url
+	myApplication.config(['$locationProvider', function ($locationProvider) {
+		$locationProvider.hashPrefix('!');
+	}]);
+
+	myApplication
+	.controller(
+			"parentCntl",
+			[
+			 "$scope",
+			 "$rootScope",
+			 "$state",
+			 "$http",
+			 '$timeout',
+			 function parentCntl( $scope, $rootScope, $state,
+					 $http,AuthenticationService,USER_ROLES,$timeout) {
+
+				 $scope.currentUser = null;
+				 $scope.userRoles = USER_ROLES;
+
+			 } ])
+			 .constant('USER_ROLES', {
+				 all: '*',
+				 admin: 'admin',
+				 guest: 'guest',
+				 host: 'host'
+			 });
+
+})();
