@@ -1,15 +1,15 @@
 # Angular-deployment-tutorial
-macOS, Yeoman, AngularJS 1.x, Grunt, Github, Heroku
+AngularJS 1.x, Grunt + Heroku
 
-**Purpose:** The purpose for writing this post is to share what I have learned over the three days (through trial and error) about using [Grunt](http://gruntjs.com). I hope that it’ll get you up and running within the hour. I will also be editing to this article as I learn more from the community and documentations.
+**Purpose:** The purpose for writing this application is to spread knowledge among developers for tools and technologies. I am publishing my Youtube videos here.
+Its best place to learn for free !!
 
-**Context:** My team and I had seven days to learn enough about a new framework to build our final project at [Dev Bootcamp](http://devbootcamp.com), a coding bootcamp. We decided to use an AngularJS front-end that connected to our Rails API back-end. While it was easy to deploy our Rails API to Heroku, we were unsuccessful at deploying our front-end. Since we used [Yeoman](http://yeoman.io/) to scaffold our Angular template, the Yeoman system included Grunt. Grunt is essentially a task runner that automates tasks that you would do repeatedly. Since we had little time to learn about how Grunt worked, we did not successfully deploy our Web App to Heroku at the time. Since then, our Web App, UpLift, has been deployed to both Github pages and Heroku. The lesson that we learned is to deploy early and often. Here are the steps that I’ve compiled since that project. Think of this as building an Angular template Web App from scratch.
+## screens of this application
 
-## Project goal:
-![Angular Template](./sample-template.png "Angular Template")
+![alt text](screens/01.png "")
+![alt text](screens/02.png "")
+![alt text](screens/03.png "")
 
-Here is what the deployed result looks like on gh-pages:
-[yourProjectApp](http://shinwang.us/Angular-deployment-tutorial/#/)
 
 ## Setup and steps on macOS:
 
@@ -24,33 +24,6 @@ $ node -v
 ```
 $ npm install npm -g
 ```
-* To install Yeoman:
-```
-$ npm install -g yo
-```
-* To install the Angular generator:
-```
-$ npm install -g generator-angular
-```
-* Make your project folder and change into said project folder:
-```
-$ mkdir <your-project-name>-app && cd $_
-```
-* Track your files with Git
-```
-$ git init
-```
-* Add Github remote
-```
-$ git remote add origin <your-project-repo.git>
-```
-* Add, commit, and push to Github
-* Inside your project folder:
-```
-$ yo angular <your-project-name>-app
-```
-* At this point, Yeoman will walk you through a basic setup prior to scaffolding your project. For my setup, I said **no** to Gulp, **no** to Sass/compass, and **yes** to Bootstrap. After that, I used the default Angular modules.
-* If you wish to use [Karma](https://www.npmjs.com/package/grunt-karma) with Grunt to run tests:
 ```
 $ npm install grunt-karma --save-dev
 ```
