@@ -26,7 +26,7 @@
 						return true;
 					} else {
 						$http
-							.get('../assets/json/getalltraining.json')
+							.get('../assets/json/train.json')
 							.success(function (response) {
 								deferred.resolve(response);
 								$rootScope.applicationData = response;

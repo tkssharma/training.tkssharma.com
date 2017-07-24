@@ -18,7 +18,7 @@
 	.element(document)
 	.ready(
 			function() {
-				$http.get('../assets/json/getAllTraining.json')
+				$http.get('../assets/json/train.json')
 				.then(
 						function(response) {
 							myApplication.constant("resourceData",
