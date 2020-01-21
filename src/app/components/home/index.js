@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import { Link } from 'react-router-dom';
 
 const HomepageWrapper = ({ data }) => {
   return (
@@ -46,30 +47,28 @@ const HomepageWrapper = ({ data }) => {
         <div className="container">
           <div className="row block-lessons-series">
             {data &&
-              data.list &&
-              data.list.map((i, index) => {
+              data.data &&
+              data.data.map((i, index) => {
+                const url = i.snippet?.thumbnails?.standard?.url;
+                const title = i.snippet?.title;
                 return (
                   <div key={index} className="col-sm-6 item">
                     <div className="media-holder">
                       <a href="">
-                        <img
-                          ng-src="{{data.Thumbnails[0].FullURL}}"
-                          className="img-responsive"
-                        />
+                        <img src={url} className="img-responsive" />
                       </a>
                     </div>
 
                     <div className="media-subscription-holder">
                       <h3 className="title">
-                        <p>{'title'}</p>
+                        <h4>{title}</h4>
                       </h3>
                       <div className="info-line">
                         <small className="folder">
-                          {' '}
                           <i className="icon-folder-open-alt"></i>
-                          <a href=" #!/youtube/{{data.ID}}">
+                          <Link to={`/youtube/${i.id}`}>
                             watch Training Videos On YouTube
-                          </a>
+                          </Link>
                         </small>
                       </div>
                     </div>

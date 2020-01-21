@@ -7,10 +7,10 @@ const HomePage = () => {
   return (
     <Query query={GETYOUTUBE} fetchPolicy="no-cache">
       {({ data, loading }) => {
-        if (loading) return null;
+        if (loading) return <Home data={null} loading={true} />;
         // in development return detail p[age even if query fails ]
-        if (!data || !data.list) return null;
-        return <Home data={data && data.list} />;
+        if (!data || !data.list) return <Home data={null} loading={false} />;
+        return <Home data={data && data.list} loading={false} />;
       }}
     </Query>
   );

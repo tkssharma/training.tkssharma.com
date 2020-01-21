@@ -19,12 +19,12 @@
     "sass-lint": "^1.13.1",
     "workbox-sw": "^4.3.1",
     "workbox-webpack-plugin": "^4.3.1",
+    "graphql": "^14.4.2",
     "apollo-boost": "^0.4.3",
     "apollo-link-dedup": "^1.0.20",
     "apollo-link-error": "^1.1.11",
     "react-apollo": "^2.5.8",
-    "react-apollo-network-status": "^2.0.0-alpha.2",
-    "graphql": "^14.4.2"
+    "react-apollo-network-status": "^2.0.0-alpha.2"
   },
   "scripts": {
     "start": "react-scripts start",

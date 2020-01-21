@@ -5,12 +5,21 @@ const Query = gql`
     list: getYoutube {
       data {
         _id
-        ID
-        DurationInSeconds
-        Title
-        ShortDescription
-        Description
-        WelcomeVideoId
+        kind
+        id
+        etag
+        snippet {
+          channelTitle
+          description
+          title
+          channelId
+          publishedAt
+          thumbnails {
+            standard {
+              url
+            }
+          }
+        }
       }
       message
       success
