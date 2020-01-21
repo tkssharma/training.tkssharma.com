@@ -7,5 +7,5 @@ COPY . .
 RUN  npm install
 ENV REACT_APP_GRAPHQL_SERVER_URL="http://localhost:4005"
 # Run npm install --global grpc --unsafe-perm
-EXPOSE 3000 9204
+EXPOSE 3000
 CMD [ "npm", "run", "start" ]

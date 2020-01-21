@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 
-const HomepageWrapper = () => {
+const HomepageWrapper = ({ data }) => {
   return (
     <Fragment>
       <section className="hero">
@@ -37,10 +37,7 @@ const HomepageWrapper = () => {
             href="#!/all"
             className="custom-btn custom-btn-red custom-btn-primary"
           >
-            Unlock the Knowledge <br />{' '}
-            <small>
-              <i>click here to start</i>
-            </small>
+            Unlock the Knowledge
           </a>
         </div>
       </section>
@@ -48,35 +45,37 @@ const HomepageWrapper = () => {
       <section className="section">
         <div className="container">
           <div className="row block-lessons-series">
-            <div
-              ng-repeat="data in applicationYouTubeData"
-              className="col-sm-6 item"
-            >
-              <div className="media-holder">
-                <a href="">
-                  {' '}
-                  <img
-                    ng-src="{{data.Thumbnails[0].FullURL}}"
-                    className="img-responsive"
-                  />
-                </a>
-              </div>
+            {data &&
+              data.list &&
+              data.list.map((i, index) => {
+                return (
+                  <div key={index} className="col-sm-6 item">
+                    <div className="media-holder">
+                      <a href="">
+                        <img
+                          ng-src="{{data.Thumbnails[0].FullURL}}"
+                          className="img-responsive"
+                        />
+                      </a>
+                    </div>
 
-              <div className="media-subscription-holder">
-                <h3 className="title">
-                  <p>{'title'}</p>
-                </h3>
-                <div className="info-line">
-                  <small className="folder">
-                    {' '}
-                    <i className="icon-folder-open-alt"></i>
-                    <a href=" #!/youtube/{{data.ID}}">
-                      watch Training Videos On YouTube
-                    </a>
-                  </small>
-                </div>
-              </div>
-            </div>
+                    <div className="media-subscription-holder">
+                      <h3 className="title">
+                        <p>{'title'}</p>
+                      </h3>
+                      <div className="info-line">
+                        <small className="folder">
+                          {' '}
+                          <i className="icon-folder-open-alt"></i>
+                          <a href=" #!/youtube/{{data.ID}}">
+                            watch Training Videos On YouTube
+                          </a>
+                        </small>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
           </div>
         </div>
       </section>
