@@ -4,6 +4,8 @@ import { ApolloContext } from 'react-apollo';
 import getUser from './graphql/query/user';
 import { getUserDataFromLS } from './pages/utils';
 import { LS_USER_DATA } from './constants';
+import logo from '../images/lab.png';
+
 const Header = ({ isLoggedIn }) => {
   const { client } = useContext(ApolloContext);
   const [user, setUser] = useState({});
@@ -55,13 +57,13 @@ const Header = ({ isLoggedIn }) => {
             >
               <i className="icon-reorder" />
             </button>
-            <a href="#!/" className="navbar-brand logo">
+            <Link to="/" className="navbar-brand logo">
               <img
-                alt="Logo with text"
-                className="img-responsive"
-                src="img/logo.jpg"
+                src={logo}
+                alt="logo"
+                style={{ width: '100%', height: '40px' }}
               />
-            </a>
+            </Link>
           </div>
 
           <div
@@ -70,9 +72,9 @@ const Header = ({ isLoggedIn }) => {
           >
             <ul className="nav navbar-nav header-navigation-list">
               <li className="dropdown">
-                <a href="#" data-toggle="dropdown" className="dropdown-toggle">
+                <Link to="/" data-toggle="dropdown" className="dropdown-toggle">
                   Learnings <b className="caret" />
-                </a>
+                </Link>
                 <ul className="dropdown-menu">
                   <li className="semi-bold">
                     <a href="#/all">All</a>
@@ -113,10 +115,10 @@ const Header = ({ isLoggedIn }) => {
                 </ul>
               </li>
               <li className="hidden-sm">
-                <a href="#!/training">Trainings</a>
+                <Link to="/learn/training">Trainings</Link>
               </li>
               <li className="hidden-sm">
-                <a href="#!/playlists">Screencast</a>
+                <Link to="/learn/webcast">Screencast</Link>
               </li>
             </ul>
 

@@ -4,12 +4,15 @@ import '../assets/styles/glyphicons.css';
 import '../assets/styles/style.css';
 import Apollo from './HOCs/apollo';
 import Routes from './pages/_pages';
+import { ApolloNetworkStatusProvider } from 'react-apollo-network-status';
 
 class App extends Component {
   render() {
     return (
       <Apollo>
-        <Routes />
+        <ApolloNetworkStatusProvider>
+          <Routes />
+        </ApolloNetworkStatusProvider>
       </Apollo>
     );
   }

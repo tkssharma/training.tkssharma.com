@@ -54,9 +54,9 @@ const HomepageWrapper = ({ data }) => {
                 return (
                   <div key={index} className="col-sm-6 item">
                     <div className="media-holder">
-                      <a href="">
+                      <Link to={`youtube/${i._id}`}>
                         <img src={url} className="img-responsive" />
-                      </a>
+                      </Link>
                     </div>
 
                     <div className="media-subscription-holder">
@@ -66,7 +66,7 @@ const HomepageWrapper = ({ data }) => {
                       <div className="info-line">
                         <small className="folder">
                           <i className="icon-folder-open-alt"></i>
-                          <Link to={`/youtube/${i.id}`}>
+                          <Link to={`/youtube/${i._id}`}>
                             watch Training Videos On YouTube
                           </Link>
                         </small>
