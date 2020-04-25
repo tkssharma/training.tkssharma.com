@@ -4,7 +4,6 @@ import { ApolloContext } from 'react-apollo';
 import getUser from './graphql/query/user';
 import { getUserDataFromLS } from './pages/utils';
 import { LS_USER_DATA } from './constants';
-import logo from '../images/lab.png';
 
 const Header = ({ isLoggedIn }) => {
   const { client } = useContext(ApolloContext);
@@ -58,11 +57,7 @@ const Header = ({ isLoggedIn }) => {
               <i className="icon-reorder" />
             </button>
             <Link to="/" className="navbar-brand logo">
-              <img
-                src={logo}
-                alt="logo"
-                style={{ width: '100%', height: '40px' }}
-              />
+              Training Portal
             </Link>
           </div>
 

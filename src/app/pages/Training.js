@@ -1,7 +1,8 @@
 import React from 'react';
 import ScreenCastQuery from '../graphql/query/webcast';
 import { Query } from 'react-apollo';
-
+import { Mock } from '../graphql/mock/index';
+import { getTrainingData} from './utils'
 export const WebcastPage = ({ data }) => {
   return (
     <div>
@@ -69,7 +70,8 @@ const Webcast = () => {
       {({ data, loading }) => {
         if (loading) return <WebcastPage data={null} />;
         // in development return detail p[age even if query fails ]
-        if (!data || !data.list) return <WebcastPage data={null} />;
+        if (!data || !data.list)
+          return <WebcastPage data={getTrainingData()} />;
         return (
           <WebcastPage data={data.list && data.list.data} loading={false} />
         );

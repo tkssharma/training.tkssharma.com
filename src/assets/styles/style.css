@@ -10217,7 +10217,8 @@ tbody.collapse.in {
 }
 
 .navbar-brand:focus, .navbar-brand:hover {
-	text-decoration: none
+	text-decoration: none !important;
+	color: #fff;
 }
 
 .navbar-brand>img {
@@ -18047,14 +18048,12 @@ header {
 	display: block;
 	padding: 0;
 	margin-right: 20px;
-	margin-top: 10px
+	margin-top: 14px;
 }
-
 .navbar-brand {
-	height: 50px;
-	width: 150px
+	font-weight: bolder;
+	font-size: 20px;
 }
-
 @media only screen and (max-width: 991px) {
 	.header-navigation-holder .logo {
 		margin-right: 10px;

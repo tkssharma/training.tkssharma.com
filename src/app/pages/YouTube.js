@@ -1,14 +1,14 @@
 import React, { Fragment } from 'react';
 import VideoQuery from '../graphql/query/video';
 import { Query } from 'react-apollo';
-import { Link } from 'react-router-dom';
 import VideoList from './VideoList';
+import { getMockData } from './utils';
+
 export const YouTubePage = ({ data }) => {
   const url = data?.snippet?.thumbnails?.standard?.url;
   const title = data?.snippet?.title;
   const description = data?.snippet?.description;
   const id = data?.id;
-  console.log(data);
   return (
     <Fragment>
       <section className="hero-technology">
@@ -112,7 +112,7 @@ const Webcast = ({ match }) => {
       {({ data, loading }) => {
         if (loading) return null;
         // in development return detail p[age even if query fails ]
-        if (!data || !data.video) return null;
+        if (!data || !data.video) return <YouTubePage data={getMockData(id)} />;
         return <YouTubePage data={data.video && data.video.data} />;
       }}
     </Query>

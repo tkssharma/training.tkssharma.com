@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
+import banner from '../../../images/default.png';
 
 const HomepageWrapper = ({ data }) => {
   return (
@@ -54,8 +55,12 @@ const HomepageWrapper = ({ data }) => {
                 return (
                   <div key={index} className="col-sm-6 item">
                     <div className="media-holder">
-                      <Link to={`youtube/${i._id}`}>
-                        <img src={url} className="img-responsive" />
+                      <Link to={`youtube/${i.id}`}>
+                        <img
+                          alt=""
+                          src={url || banner}
+                          className="img-responsive"
+                        />
                       </Link>
                     </div>
 
@@ -66,7 +71,7 @@ const HomepageWrapper = ({ data }) => {
                       <div className="info-line">
                         <small className="folder">
                           <i className="icon-folder-open-alt"></i>
-                          <Link to={`/youtube/${i._id}`}>
+                          <Link to={`/youtube/${i.id}`}>
                             watch Training Videos On YouTube
                           </Link>
                         </small>

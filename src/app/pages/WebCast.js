@@ -2,7 +2,8 @@ import React from 'react';
 import ScreenCastQuery from '../graphql/query/webcast';
 import { Query } from 'react-apollo';
 import { Link } from 'react-router-dom';
-
+import { getWebcastData } from './utils';
+import banner from '../../images/default.png';
 export const WebcastPage = ({ data }) => {
   return (
     <div>
@@ -19,13 +20,12 @@ export const WebcastPage = ({ data }) => {
               data.map((i, index) => {
                 const url = i.snippet?.thumbnails?.standard?.url;
                 const title = i.snippet?.title;
-                const description = i.snippet?.description;
                 return (
                   <div key={index} className="col-sm-6 item">
-                    <Link to={`/youtube/${i._id}`}>
+                    <Link to={`/youtube/${i.id}`}>
                       <div className="media-holder">
                         <img
-                          src={url}
+                          src={url || banner}
                           alt="training"
                           className="img-responsive img-admin-tech-logo"
                         />
@@ -34,18 +34,16 @@ export const WebcastPage = ({ data }) => {
                     <div className="media-subscription-holder">
                       <div className="media">
                         <h3 className="title">
-                          <Link to={`/youtube/${i._id}`}>
+                          <Link to={`/youtube/${i.id}`}>
                             <h4>{title}</h4>
                           </Link>
                         </h3>
                       </div>
-                      <small className="description">
-                        <h6>{description && description.substr(0, 100)}</h6>
-                      </small>
+                      <small className="description"></small>
                       <div className="info-line">
                         <small className="folder">
                           <i className="icon-play-circle">
-                            <Link to={`/youtube/${i._id}`}>
+                            <Link to={`/youtube/${i.id}`}>
                               Watch Now with detailed sessions{' '}
                             </Link>
                           </i>
@@ -73,7 +71,8 @@ const Webcast = ({ match }) => {
       {({ data, loading }) => {
         if (loading) return <WebcastPage data={null} />;
         // in development return detail p[age even if query fails ]
-        if (!data || !data.list) return <WebcastPage data={null} />;
+        if (!data || !data.list)
+          return <WebcastPage data={getWebcastData(name)} />;
         return (
           <WebcastPage
             name={name}
