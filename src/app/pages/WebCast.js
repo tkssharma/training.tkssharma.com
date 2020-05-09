@@ -11,7 +11,7 @@ export const WebcastPage = ({ data }) => {
         <div className="container">
           <div className="title-subtitle-block">
             <h2 className="title">
-              Screencast on Angular 2.0/React and Front and framework ..
+              Screencast on Different Platform and framework ..
             </h2>
           </div>
 
@@ -19,7 +19,8 @@ export const WebcastPage = ({ data }) => {
             {data &&
               data.map((i, index) => {
                 const url = i.snippet?.thumbnails?.standard?.url;
-                const title = i.snippet?.title;
+                const title =
+                  i.snippet?.title && i.snippet?.title.substr(0, 50);
                 return (
                   <div key={index} className="col-sm-6 item">
                     <Link to={`/youtube/${i.id}`}>

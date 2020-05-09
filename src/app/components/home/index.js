@@ -51,7 +51,8 @@ const HomepageWrapper = ({ data }) => {
               data.data &&
               data.data.map((i, index) => {
                 const url = i.snippet?.thumbnails?.standard?.url;
-                const title = i.snippet?.title;
+                const title =
+                  i.snippet?.title && i.snippet?.title.substr(0, 50);
                 return (
                   <div key={index} className="col-sm-6 item">
                     <div className="media-holder">

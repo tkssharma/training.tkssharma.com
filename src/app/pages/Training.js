@@ -2,16 +2,14 @@ import React from 'react';
 import ScreenCastQuery from '../graphql/query/webcast';
 import { Query } from 'react-apollo';
 import { Mock } from '../graphql/mock/index';
-import { getTrainingData} from './utils'
+import { getTrainingData } from './utils';
 export const WebcastPage = ({ data }) => {
   return (
     <div>
       <section className="section">
         <div className="container">
           <div className="title-subtitle-block">
-            <h2 className="title">
-              Screencast on Angular 2.0/React and Front and framework ..
-            </h2>
+            <h2 className="title">Screencast on Different Platforms ..</h2>
           </div>
 
           <div className="row block-lessons-series">
