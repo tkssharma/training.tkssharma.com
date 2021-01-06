@@ -7,12 +7,7 @@ module.exports = {
   },
   parser: 'babel-eslint',
   extends: [
-    'eslint:recommended',
-    'plugin:import/errors',
-    'plugin:react/recommended',
-    'plugin:jsx-a11y/recommended',
-    'prettier',
-    'prettier/react',
+    'prettier'
   ],
   // extending recommended config and config derived from eslint-config-prettier
   parserOptions: {
@@ -31,16 +26,5 @@ module.exports = {
     SharedArrayBuffer: 'readonly',
   },
   rules: {
-    'react/prop-types': 0,
-    'react-hooks/rules-of-hooks': 'error',
-    'no-console': 'warn',
-    'react/prop-types': 0,
-    'prettier/prettier': [
-      'error',
-      {
-        singleQuote: true,
-        trailingComma: 'all',
-      },
-    ],
   },
 };

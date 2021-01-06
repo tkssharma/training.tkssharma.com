@@ -4,6 +4,7 @@ src/.DS_Store
 /bower_components/
 */bower_components/
 .settings
+/build
 .project
 .project
 .metadata
