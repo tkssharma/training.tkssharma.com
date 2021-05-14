@@ -57,7 +57,7 @@ const HomepageWrapper = () => {
                   {' '}
                   <img
                     ng-src="{{data.Thumbnails[0].FullURL}}"
-                    className="img-responsive"
+                    className="img-responsive banner-responsive"
                   />
                 </a>
               </div>

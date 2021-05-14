@@ -28,7 +28,7 @@ export const WebcastPage = ({ data }) => {
                         <img
                           src={url || banner}
                           alt="training"
-                          className="img-responsive img-admin-tech-logo"
+                          className="img-responsive banner-responsive img-admin-tech-logo"
                         />
                       </div>
                     </Link>

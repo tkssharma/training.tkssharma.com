@@ -60,7 +60,7 @@ const HomepageWrapper = ({ data }) => {
                         <img
                           alt=""
                           src={url || banner}
-                          className="img-responsive"
+                          className="img-responsive banner-responsive"
                         />
                       </Link>
                     </div>

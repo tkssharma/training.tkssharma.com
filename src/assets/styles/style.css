@@ -12535,6 +12535,9 @@ button.close {
 .semi-bold {
 	font-weight: 600
 }
+.banner-responsive {
+  margin-top: -50px;
+}
 
 .img-responsive-inline {
 	display: inline-block;

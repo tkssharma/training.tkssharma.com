@@ -46,23 +46,23 @@
     "extends": "react-app"
   },
   "devDependencies": {
-    "mocha": "5.2.0",
-    "mochawesome": "^4.1.0",
-    "mochawesome-merge": "^2.0.1",
-    "mochawesome-report-generator": "^4.0.1",
-    "sonar-scanner": "^3.1.0",
-    "eslint-config-airbnb": "^18.0.1",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-prettier": "^3.1.0",
-    "prettier": "^1.18.2",
     "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^18.0.1",
     "eslint-config-prettier": "^6.2.0",
     "eslint-config-react-app": "^4.0.0",
     "eslint-loader": "2.1.2",
     "eslint-plugin-flowtype": "2.50.1",
+    "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "6.2.1",
+    "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "7.12.4",
-    "eslint-plugin-react-hooks": "^1.5.0"
+    "eslint-plugin-react-hooks": "^1.5.0",
+    "mocha": "5.2.0",
+    "mochawesome": "^4.1.0",
+    "mochawesome-merge": "^2.0.1",
+    "mochawesome-report-generator": "^4.0.1",
+    "prettier": "^1.18.2",
+    "sonar-scanner": "^3.1.0"
   },
   "browserslist": {
     "production": [
