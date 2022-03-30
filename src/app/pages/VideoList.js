@@ -1,15 +1,19 @@
 import React, { useEffect } from 'react';
-const Videos = ({ id }) => {
-  useEffect(() => {
-    return () => null;
-  }, [id]);
+const Videos = ({ items }) => {
+
   return (
     <div className="tab-content view-tabs-holder">
       <div className="tab-pane tab-view-list active" id="lesson-list">
         <div className="series-lessons-holder">
           <div className="table-responsive">
             <table className="table table-condensed">
-              <tbody></tbody>
+              <tbody>
+                {items && items.map((i, index) => {
+                  return (
+                    <tr key={index}><td>{i?.snippet?.title}</td></tr>
+                  )
+                })}
+              </tbody>
             </table>
           </div>
         </div>

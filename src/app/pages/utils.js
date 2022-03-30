@@ -1,8 +1,13 @@
 import { LS_USER_DATA } from '../constants';
 import { Mock } from '../graphql/mock/index';
+import { Playlists } from '../graphql/mock/playlist';
 
 export function getMockData(id) {
-  return Mock.data.filter(i => i.id === id)[0];
+  const playlist = Mock.data.filter(i => i.id === id)[0];
+  const items = Playlists.find(i => i.key === id);
+  const playlistItems = items && items.value;
+  playlist.items = playlistItems;
+  return playlist;
 }
 
 export function getUserDataFromLS() {

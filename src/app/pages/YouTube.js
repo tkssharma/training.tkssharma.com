@@ -8,6 +8,7 @@ export const YouTubePage = ({ data }) => {
   const url = data?.snippet?.thumbnails?.standard?.url;
   const title = data?.snippet?.title;
   const description = data?.snippet?.description;
+  const items = data?.items;
   const id = data?.id;
   return (
     <Fragment>
@@ -97,7 +98,7 @@ export const YouTubePage = ({ data }) => {
                 </a>
               </div>
             </div>
-            <VideoList id={id} />
+            <VideoList items={items} />
           </div>
         </div>
       </section>

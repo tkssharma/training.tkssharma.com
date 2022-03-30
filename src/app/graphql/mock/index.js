@@ -1,7 +1,5 @@
 const Mock = {
   data : [
- 
- 
    {
      "kind": "youtube#playlist",
      "etag": "Bofbn8YS20C_wMZ3t6rv_BwJCqE",
