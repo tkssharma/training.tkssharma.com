@@ -10,7 +10,7 @@ const Videos = ({ items }) => {
               <tbody>
                 {items && items.map((i, index) => {
                   return (
-                    <tr key={index}><td>{i?.snippet?.title}</td></tr>
+                    <tr key={index}><td>{i}</td></tr>
                   )
                 })}
               </tbody>
